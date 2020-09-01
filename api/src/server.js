@@ -1,5 +1,6 @@
 const express = require('express')
 const routes = require('./routes')
+const cors = require('cors')
 
 const mongoose = require('mongoose')
 
@@ -17,6 +18,7 @@ const app = express()
 // req.query = Acessar query params (para Filtros)
 // req.params = Acessar route params (para edição, delete)
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 
